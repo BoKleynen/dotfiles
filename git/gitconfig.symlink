@@ -2,7 +2,7 @@
 [User]
   name = Bo Kleynen
 [commit]
-	gpgsign = true
+	gpgSign = true
 [core]
   excludesfile = ~/.gitignore
   editor = vim
@@ -19,3 +19,5 @@
   path = ~/.gitconfig.local
 [credential]
 	helper = osxkeychain
+[tag]
+	forceSignAnnotated = true
