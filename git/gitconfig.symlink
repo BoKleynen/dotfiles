@@ -1,0 +1,21 @@
+# Local/private config
+[User]
+  name = Bo Kleynen
+[commit]
+	gpgsign = true
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[gpg]
+	program = gpg
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[include]
+  path = ~/.gitconfig.local
+[credential]
+	helper = osxkeychain
