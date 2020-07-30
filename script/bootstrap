@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 #
 # bootstrap installs things.
+# source: https://github.com/holman/dotfiles/blob/master/script/bootstrap
 
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)

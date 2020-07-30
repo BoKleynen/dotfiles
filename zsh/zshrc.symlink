@@ -3,6 +3,7 @@ export DOTFILES="$HOME/.dotfiles"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# source: https://github.com/holman/dotfiles/blob/master/zsh/zshrc.symlink
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc

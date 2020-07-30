@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 #
 # Run all dotfiles installers.
+# https://github.com/holman/dotfiles/blob/master/script/install
 
 set -e
 
