@@ -1,2 +1,8 @@
+# macOS .DS_Store files
+.DS_Store
+
+# direnv .envrc files
 .envrc
+
+# jetbrains IDEs .idea folder
 .idea/
