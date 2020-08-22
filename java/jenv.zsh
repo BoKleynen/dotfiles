@@ -1,1 +1,4 @@
-eval "$(jenv init -)"
+if (( $+commands[jenv] ))
+then
+  eval "$(jenv init -)"
+fi
