@@ -2,7 +2,7 @@
 [User]
   name = Bo Kleynen
 [commit]
-	gpgSign = true
+  gpgSign = true
 [core]
   excludesfile = ~/.gitignore
   editor = vim
@@ -12,12 +12,14 @@
   branch = auto
   ui = true
 [gpg]
-	program = gpg
+  program = gpg
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 [include]
   path = ~/.gitconfig.local
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [tag]
-	forceSignAnnotated = true
+  forceSignAnnotated = true
+[pull]
+	rebase = true
