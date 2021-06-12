@@ -17,3 +17,10 @@ indent_style = tab
 
 [Makefile]
 indent_style = tab
+
+[.hs]
+indent_style = space
+
+[.idr]
+indent_style = space
+indent_size = 2
