@@ -1,7 +1,7 @@
 # Local/private config
 [User]
-	name = Bo Kleynen
-	email = kleynenbo@gmail.com
+  name = Bo Kleynen
+  email = kleynenbo@gmail.com
 [commit]
   gpgSign = true
 [core]
@@ -23,6 +23,7 @@
 [tag]
   forceSignAnnotated = true
 [pull]
-	rebase = true
+  rebase = true
 [init]
-	defaultBranch = master
+  defaultBranch = main
+

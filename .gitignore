@@ -1,0 +1,7 @@
+config.symlink/configstore/
+config.symlink/flutter/
+config.symlink/gatsby/
+
+config.symlink/texstudio/
+
+config.symlink/yarn/
