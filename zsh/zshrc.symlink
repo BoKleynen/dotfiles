@@ -67,7 +67,7 @@ if [ "$(command -v exa)" ]; then
     unalias -m 'la'
     unalias -m 'ls'
     alias ls='exa'
-    alias la='exa -lA'
+    alias la='exa -la'
     alias ll='exa -l --color always --icons -a -s type'
 fi
 
