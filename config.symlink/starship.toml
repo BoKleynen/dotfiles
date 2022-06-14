@@ -1,0 +1,31 @@
+add_newline = false
+# right_format = """$ruby\
+# $nodejs\
+# $python"""
+
+[aws]
+disabled = true
+
+[character]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[golang]
+disabled = true
+
+[nodejs]
+format = "[($version )$symbol]($style)"
+version_format = "${raw}"
+symbol = ""
+
+[python]
+format = "[($version )$symbol]($style)"
+version_format = "${raw}"
+symbol = "🐍"
+
+[ruby]
+format = "[($version )$symbol]($style)"
+version_format = "${raw}"
+symbol = "💎"

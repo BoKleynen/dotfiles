@@ -6,7 +6,7 @@
   gpgSign = true
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+  editor = nvim
 [color]
   diff = auto
   status = auto
