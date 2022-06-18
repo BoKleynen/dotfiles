@@ -16,7 +16,6 @@ filetype off
 
 call plug#begin()
 
-
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'itchyny/lightline.vim'
