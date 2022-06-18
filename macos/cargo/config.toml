@@ -1,0 +1,10 @@
+[build]
+    rustc-wrapper = "/usr/local/bin/sccache"
+
+[target.x86_64-apple-darwin]
+	rustflags = [
+		"-Ctarget-cpu=native",
+	]
+
+[net]
+    git-fetch-with-cli = true
