@@ -1,5 +1,3 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
-
 import:
   - /Users/bo/.dotfiles/config.symlink/alacritty/base16_default_dark.yml
 
@@ -54,6 +52,12 @@ window:
   #     - buttonless: Title bar, transparent background, but no title bar buttons
   decorations: full
 
+   # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 0.85
+
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -69,7 +73,7 @@ window:
   title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
-  #dynamic_title: true
+  dynamic_title: true
 
   # Window class (Linux/BSD only):
   #class:
@@ -82,12 +86,12 @@ window:
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
   # Set this to `None` to use the default theme variant.
-  #gtk_theme_variant: None
+  gtk_theme_variant: None
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 2000
+  history: 10000
 
   # Scrolling distance multiplier.
   #multiplier: 3
@@ -96,48 +100,19 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
     family: "MonoLisa Nerd Font"
-
-    # The `style` can be specified to pick a specific face.
     style: Regular
 
-  # Bold font face
   bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
     #family: monospace
-
-    # The `style` can be specified to pick a specific face.
     style: Bold
 
-  # Italic font face
   italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
     #family: monospace
-
-    # The `style` can be specified to pick a specific face.
     style: Italic
 
-  # Bold italic font face
   bold_italic:
-    # Font family
-    #
-    # If the bold italic family is not specified, it will fall back to the
-    # value specified for the normal font.
     #family: monospace
-
-    # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
@@ -158,65 +133,6 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
-
-# Colors (Tomorrow Night)
-# colors:
-  # Default colors
-  # primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '#828482'
-    #bright_foreground: '#eaeaea'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  # cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Vi mode cursor colors
-  #
-  # Colors for the cursor when the vi mode is active.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  # vi_mode_cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  # selection:
-  #  text: CellBackground
-  #  background: CellForeground
-
-  # Search colors
-  #
-  # Colors used for the search bar and match highlighting.
-  # search:
-    # Allowed values are CellForeground and CellBackground, which reference the
-    # affected cell, or hexadecimal colors like #ff00ff.
-    # matches:
-    #  foreground: '#000000'
-    #  background: '#ffffff'
-
-    # bar:
-    #  background: '#c5c8c6'
-    #  foreground: '#1d1f21'
 
 # Bell
 #
@@ -259,12 +175,6 @@ font:
   #
   #command: None
 
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-#background_opacity: 1.0
-
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
@@ -280,6 +190,15 @@ font:
   #   - | Beam
   style: Block
 
+  # Cursor blinking state
+  #
+  # Values for `blinking`:
+  #   - Never: Prevent the cursor from ever blinking
+  #   - Off: Disable blinking by default
+  #   - On: Enable blinking by default
+  #   - Always: Force the cursor to always blink
+  blinking: On
+
   # Vi mode cursor style
   #
   # If the vi mode cursor style is `None` or not specified, it will fall back to
@@ -287,6 +206,10 @@ font:
   #
   # See `cursor.style` for available options.
   #vi_mode_style: None
+
+
+  # Cursor blinking interval in milliseconds.
+  #blink_interval: 750
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
@@ -614,24 +537,3 @@ key_bindings:
   - { key: X, mods: Command, chars: "\x1bx" }
   - { key: Z, mods: Command, chars: "\x1bz" }
 
-
-#debug:
-  # Display the time it takes to redraw each frame.
-  #render_timer: false
-
-  # Keep the log file after quitting Alacritty.
-  #persistent_logging: false
-
-  # Log level
-  #
-  # Values for `log_level`:
-  #   - None
-  #   - Error
-  #   - Warn
-  #   - Info
-  #   - Debug
-  #   - Trace
-  #log_level: Warn
-
-  # Print all received window events.
-  #print_events: false
