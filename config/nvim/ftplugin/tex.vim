@@ -9,5 +9,3 @@ let g:vimtex_compiler_latexmk = {
 	\ 'build_dir' : 'build',
 	\}
 
-let s:latexmk = 'latexmk -pdf -output-directory=%:p:h/out %'
-let &l:makeprg = expand(s:latexmk)
