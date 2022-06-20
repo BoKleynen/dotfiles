@@ -1,3 +1,5 @@
+# gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
+
 import:
   - /Users/bo/.dotfiles/config.symlink/alacritty/base16_default_dark.yml
 
@@ -101,6 +103,7 @@ font:
   # Normal (roman) font face
   normal:
     family: "MonoLisa Nerd Font"
+    #family: "Jetbrains Mono Nerd Font"
     style: Regular
 
   bold:
