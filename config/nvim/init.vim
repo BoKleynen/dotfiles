@@ -1,4 +1,5 @@
 set shell=/bin/zsh
+let mapleader = "\<Space>"
 
 set nocompatible
 filetype off
