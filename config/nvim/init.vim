@@ -24,8 +24,6 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'lervag/vimtex'
 
-Plug 'SirVer/ultisnips'
-
 call plug#end()
 
 filetype on             " enable filetype detection
@@ -42,8 +40,3 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" UltiSnips configuration
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
