@@ -32,6 +32,7 @@ for dst, src in home_links.items():
         os.symlink(join(dotfiles, src), join(home, dst))
     except:
         os.remove(join(home, dst))
+        os.symlink(join(dotfiles, src), join(home, dst))
 
 
 if platform.system() == "Darwin":
@@ -40,6 +41,7 @@ if platform.system() == "Darwin":
             os.symlink(join(dotfiles, src), join(home, dst))
         except:
             os.remove(join(home, dst))
+            os.symlink(join(dotfiles, src), join(home, dst))
 
 if platform.system() == "linux":
     for dst, src in linux_links.items():
@@ -47,3 +49,4 @@ if platform.system() == "linux":
             os.symlink(join(dotfiles, src), join(home, dst))
         except:
             os.remove(join(home, dst))
+            os.symlink(join(dotfiles, src), join(home, dst))
