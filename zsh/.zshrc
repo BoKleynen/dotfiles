@@ -36,4 +36,3 @@ source $DOTFILES/zsh/aliases.zsh
 eval "$(direnv hook zsh)"
 
 complete -o nospace -C /usr/local/bin/terraform terraform
-

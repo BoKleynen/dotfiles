@@ -16,4 +16,3 @@ if [ "$(command -v bat)" ]; then
   unalias -m 'cat'
   alias cat='bat -pp'
 fi
-
