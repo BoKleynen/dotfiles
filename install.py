@@ -13,6 +13,7 @@ home_links = {
     ".gitignore": "link/.gitignore",
     ".tool-versions": "link/.tool-versions",
     ".zshrc": "zsh/.zshrc",
+    ".zshenv": "zsh/.zshenv",
 }
 
 macos_links = {
@@ -27,15 +28,22 @@ home = expanduser("~")
 dotfiles = dirname(realpath(__file__))
 
 for dst, src in home_links.items():
-    os.remove(join(home, dst))
-    os.symlink(join(dotfiles, src), join(home, dst))
+    try:
+        os.symlink(join(dotfiles, src), join(home, dst))
+    except:
+        os.remove(join(home, dst))
+
 
 if platform.system() == "Darwin":
     for dst, src in macos_links.items():
-        os.remove(join(home, dst))
-        os.symlink(join(dotfiles, src), join(home, dst))
+        try:
+            os.symlink(join(dotfiles, src), join(home, dst))
+        except:
+            os.remove(join(home, dst))
 
 if platform.system() == "linux":
     for dst, src in linux_links.items():
-        os.remove(join(home, dst))
-        os.symlink(join(dotfiles, src), join(home, dst))
+        try:
+            os.symlink(join(dotfiles, src), join(home, dst))
+        except:
+            os.remove(join(home, dst))
