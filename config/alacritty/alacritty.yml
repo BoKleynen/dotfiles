@@ -1,7 +1,7 @@
 # gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
 
 import:
-  - /Users/bo/.dotfiles/config.symlink/alacritty/base16_default_dark.yml
+  - ~/.config/alacritty/base16_default_dark.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
