@@ -33,7 +33,6 @@ brew "go"
 brew "goreleaser"
 brew "helm"
 brew "kubernetes-cli"
-brew "krew"
 brew "kustomize"
 brew "minikube"
 brew "neovim"
@@ -76,7 +75,6 @@ cask "zoom"
 mas "Affinity Photo", id: 824183456
 mas "Amphetamine", id: 937984704
 mas "Kindle", id: 405399194
-mas "Notability", id: 360593530
 mas "Slack", id: 803453959
 mas "Things", id: 904280696
 mas "Xcode", id: 497799835

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")"
+DOTFILES=$(pwd -P)
+
+set -e
+
+echo ''
+
+ln -sf $DOTFILES/link/.asdfrc $HOME/.asdfrc
+ln -sf $DOTFILES/link/.editorconfig $HOME/.editorconfig
+ln -sf $DOTFILES/link/.gitconfig $HOME/.gitconfig
+ln -sf $DOTFILES/link/.gitignore $HOME/.gitignore
+ln -sf $DOTFILES/link/.tool-versions $HOME/.tool-versions
+ln -sf $DOTFILES/zsh/.zshenv $HOME/.zshenv
+ln -sf $DOTFILES/zsh/.zshrc $HOME/.zshrc
+
+if [[ $OSTYPE == "darwin"* ]]; then
+	ln -sf $DOTFILES/cargo/config-osx.toml $HOME/.cargo/config.toml
+elif [[ $OSTYPE == "linux-gnu"* ]]; then
+	ln -sf $DOTFILES/cargo/config-linux.toml $HOME/.carg/config.toml
+fi
+
