@@ -7,13 +7,15 @@ return {
   },
   ["nvim-treesitter/nvim-treesitter"] = {
     ensure_installed = {
+      "haskell",
+      "latex",
       "rust",
-    }
+    },
   },
   ["williamboman/mason.nvim"] = {
     ensure_installed = {
       "lua-language-server",
       "rust-analyzer",
-    }
+    },
   },
 }
