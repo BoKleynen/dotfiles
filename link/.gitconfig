@@ -3,7 +3,7 @@
   name = Bo Kleynen
   email = kleynenbo@gmail.com
 [commit]
-  gpgSign = false
+  gpgSign = true
 [core]
   excludesfile = ~/.gitignore
   editor = nvim
