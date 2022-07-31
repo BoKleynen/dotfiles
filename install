@@ -14,10 +14,5 @@ ln -sf $DOTFILES/link/.gitignore $HOME/.gitignore
 ln -sf $DOTFILES/link/.tool-versions $HOME/.tool-versions
 ln -sf $DOTFILES/zsh/.zshenv $HOME/.zshenv
 ln -sf $DOTFILES/zsh/.zshrc $HOME/.zshrc
-
-if [[ $OSTYPE == "darwin"* ]]; then
-	ln -sf $DOTFILES/cargo/config-osx.toml $HOME/.cargo/config.toml
-elif [[ $OSTYPE == "linux-gnu"* ]]; then
-	ln -sf $DOTFILES/cargo/config-linux.toml $HOME/.cargo/config.toml
-fi
+ln -sf $DOTFILES/cargo/config.toml $HOME/.cargo/config.toml
 

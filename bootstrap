@@ -23,24 +23,16 @@ fail () {
   exit
 }
 
-if [[ $OSTYPE == "darwin"* ]]; then
-	if [ ! $(which brew) ]; then
-		info "installing homebrew"
-		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-		success
-	else
-		info "Homebrew already installed"
-	fi
-
-	info "installing dependencies from Brewfile"
-	brew bundle --file $DOTFILES/brew/Brewfile --no-lock
+if [ ! $(which brew) ]; then
+	info "installing homebrew"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	success
+else
+	info "Homebrew already installed"
 fi
 
-# on macos asdf is installed using homebrwe.
-if [[ $OSTYPE != "darwin"* ]]; then
-	info "installing asdf using git"
-	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.0
-fi
+info "installing dependencies from Brewfile"
+brew bundle --file $DOTFILES/brew/Brewfile --no-lock
 
 info "installing rustc"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -- -y --no-modify-path
