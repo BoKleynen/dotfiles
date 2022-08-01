@@ -7,6 +7,12 @@ return {
       vim.g.vimtex_compiler_latexmk = {
         build_dir = "build",
       }
-    end
+    end,
+  },
+  ["neovim/nvim-lspconfig"] = {
+    config = function ()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+    end,
   },
 }
