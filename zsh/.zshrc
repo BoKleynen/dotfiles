@@ -19,8 +19,8 @@ fi
 plugins=(
   git
   docker
-  zsh-syntax-highlighting
   asdf
+  zsh-syntax-highlighting
 )
 
 autoload -U compinit
