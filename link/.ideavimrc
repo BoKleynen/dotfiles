@@ -1,0 +1,6 @@
+set relativenumber
+set number
+set clipboard+=unnamed
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
