@@ -1,3 +1,4 @@
+export XDG_CONFIG_HOME=$HOME/.config
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 path+="/usr/local/bin"
