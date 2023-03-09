@@ -15,6 +15,15 @@ lsp.configure("rust_analyzer", {
     cmd = {
         "rustup", "run", "stable", "rust-analyzer",
     },
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+            },
+        },
+    },
 })
 
 lsp.configure("hls", {
