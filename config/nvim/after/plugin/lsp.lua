@@ -3,10 +3,22 @@ require("neodev").setup({})
 
 local lsp = require('lsp-zero').preset("recommended")
 
+lsp.ensure_installed({
+    "clangd",
+    "gopls",
+    "tsserver",
+    "zls",
+})
+
 lsp.configure("rust_analyzer", {
+    force_setup = true,
     cmd = {
         "rustup", "run", "stable", "rust-analyzer",
     },
+})
+
+lsp.configure("hls", {
+    force_setup = true,
 })
 
 -- (Optional) Configure lua language server for neovim

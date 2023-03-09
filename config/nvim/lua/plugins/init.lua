@@ -18,6 +18,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate"
 	},
+    { "numToStr/Comment.nvim", opts = {} },
 	{
 		"lervag/vimtex",
         	ft = "tex",
