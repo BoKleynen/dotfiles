@@ -6,13 +6,15 @@ local lsp = require('lsp-zero').preset("recommended")
 lsp.ensure_installed({
     "clangd",
     "gopls",
+    "lua_ls",
     "tsserver",
     "zls",
 })
 
 lsp.configure("rust_analyzer", {
+    -- Managed by rustup.
+    force_setup = true,
     on_attach = function (client, bufnr)
-        vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
         vim.api.nvim_create_autocmd("BufWritePre", {
            buffer = 0,
            callback = function()
@@ -20,7 +22,6 @@ lsp.configure("rust_analyzer", {
            end,
        })
     end,
-    force_setup = true,
     cmd = {
         "rustup", "run", "stable", "rust-analyzer",
     },
@@ -37,7 +38,6 @@ lsp.configure("rust_analyzer", {
 
 lsp.configure("gopls", {
     on_attach = function (client, bufnr)
-        vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
         vim.api.nvim_create_autocmd("BufWritePre", {
            buffer = 0,
            callback = function()
@@ -48,6 +48,7 @@ lsp.configure("gopls", {
 })
 
 lsp.configure("hls", {
+    -- Managed by ghcup.
     force_setup = true,
 })
 
