@@ -12,7 +12,7 @@ return {
             { "hrsh7th/nvim-cmp" },
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },       
+            { "hrsh7th/cmp-path" },
             { "saadparwaiz1/cmp_luasnip" },
             { "hrsh7th/cmp-nvim-lua" },
 
@@ -23,7 +23,10 @@ return {
             -- Useful status updates for LSP
             -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
             { "j-hui/fidget.nvim", opts = {} },
-        }
+        },
+        config = function()
+           require("bo.lsp")
+        end
     },
     "simrat39/inlay-hints.nvim",
     "folke/neodev.nvim"

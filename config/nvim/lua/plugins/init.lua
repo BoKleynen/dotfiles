@@ -10,18 +10,14 @@ return {
             vim.cmd("colorscheme rose-pine")
         end,
 	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate"
-	},
     { "numToStr/Comment.nvim", opts = {} },
 	{
         "windwp/nvim-autopairs",
-        config = function() 
-            require("nvim-autopairs").setup {} 
+        config = function()
+            require("nvim-autopairs").setup {}
         end,
 	},
-    { 
+    {
     "nvim-lualine/lualine.nvim",
     -- See `:help lualine.txt`
     opts = {
