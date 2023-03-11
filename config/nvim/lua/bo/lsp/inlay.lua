@@ -15,7 +15,7 @@ require("inlay-hints").setup {
         },
     },
     -- Only show inlay hints for the current line
-    only_current_line = false,
+    only_current_line = true,
 }
 
 vim.api.nvim_create_autocmd("LspAttach", {
