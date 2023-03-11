@@ -1,18 +1,14 @@
 return {
+    { "nvim-lua/plenary.nvim" },
 	{
-        'rose-pine/neovim',
-        name = 'rose-pine',
+        "rose-pine/neovim",
+        name = "rose-pine",
         lazy = false,
         priority = 1000,
         config = function()
             require("rose-pine").setup()
-            vim.cmd('colorscheme rose-pine')
+            vim.cmd("colorscheme rose-pine")
         end,
-	},
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
-		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -26,14 +22,14 @@ return {
         end,
 	},
     { 
-    'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'rose-pine',
-        component_separators = '|',
-        section_separators = '',
+        theme = "rose-pine",
+        component_separators = "|",
+        section_separators = "",
       },
     },
   },

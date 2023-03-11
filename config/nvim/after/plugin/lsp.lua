@@ -1,7 +1,8 @@
 -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
 require("neodev").setup({})
+require("bo.lsp.inlay")
 
-local lsp = require('lsp-zero').preset("recommended")
+local lsp = require("lsp-zero").preset("recommended")
 
 lsp.ensure_installed({
     "clangd",
