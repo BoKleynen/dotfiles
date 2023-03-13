@@ -1,6 +1,5 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
-path+="/usr/local/bin"
 path+="$HOME/.local/bin"
 path+="/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
 path+="$GOPATH/bin"

@@ -21,13 +21,14 @@ return {
             { "rafamadriz/friendly-snippets" },
 
             -- Useful status updates for LSP
-            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
             { "j-hui/fidget.nvim", opts = {} },
         },
         config = function()
            require("bo.lsp")
         end
     },
+
     "simrat39/inlay-hints.nvim",
+
     "folke/neodev.nvim"
 }

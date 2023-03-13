@@ -1,5 +1,4 @@
 return {
-    { "nvim-lua/plenary.nvim" },
 	{
         "rose-pine/neovim",
         name = "rose-pine",
