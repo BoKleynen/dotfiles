@@ -4,8 +4,7 @@ if vim.g.neovide then
   vim.o.guifont = "MonoLisa Nerd Font"
 end
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+require("bo")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -21,6 +20,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {})
-
-require("bo")
 

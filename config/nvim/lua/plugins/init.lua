@@ -12,9 +12,7 @@ return {
     { "numToStr/Comment.nvim", opts = {} },
 	{
         "windwp/nvim-autopairs",
-        config = function()
-            require("nvim-autopairs").setup {}
-        end,
+        opts = {},
 	},
     {
     "nvim-lualine/lualine.nvim",
