@@ -26,13 +26,11 @@ fi
 
 plugins=(
   git
-  docker
   asdf
   zsh-syntax-highlighting
 )
 
-autoload -U compinit
-compinit
+autoload -Uz compinit; compinit
 
 source $DOTFILES/zsh/p10k.zsh
 source $ZSH/oh-my-zsh.sh
@@ -40,4 +38,3 @@ source $DOTFILES/zsh/aliases.zsh
 
 eval "$(direnv hook zsh)"
 
-complete -o nospace -C /usr/local/bin/terraform terraform

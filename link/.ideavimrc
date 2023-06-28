@@ -1,6 +1,7 @@
 set relativenumber
 set number
 set clipboard+=unnamed
+set scrolloff=8
 
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
