@@ -3,6 +3,7 @@ export PATH="/opt/homebrew/sbin:$PATH"
 path+="$HOME/.local/bin"
 path+="/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
 path+="$GOPATH/bin"
+export PATH="$HOME/.local/zig:$PATH"
 
 export ZSH="$HOME/.oh-my-zsh"
 

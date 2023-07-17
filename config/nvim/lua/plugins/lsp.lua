@@ -21,14 +21,13 @@ return {
             { "rafamadriz/friendly-snippets" },
 
             -- Useful status updates for LSP
-            { "j-hui/fidget.nvim", opts = {} },
+            { "j-hui/fidget.nvim", opts = {}, tag = "legacy" },
         },
         config = function()
            require("bo.lsp")
         end
     },
-
     "simrat39/inlay-hints.nvim",
-
-    "folke/neodev.nvim"
+    "folke/neodev.nvim",
+    "jose-elias-alvarez/null-ls.nvim",
 }

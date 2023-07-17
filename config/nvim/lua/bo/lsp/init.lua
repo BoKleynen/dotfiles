@@ -4,14 +4,6 @@ require("bo.lsp.inlay")
 
 local lsp = require("lsp-zero").preset("recommended")
 
-lsp.ensure_installed({
-    "clangd",
-    "gopls",
-    "lua_ls",
-    "tsserver",
-    "zls",
-})
-
 lsp.configure("rust_analyzer", {
     -- Managed by rustup.
     force_setup = true,
@@ -50,6 +42,11 @@ lsp.configure("gopls", {
 
 lsp.configure("hls", {
     -- Managed by ghcup.
+    force_setup = true,
+})
+
+lsp.configure("zls", {
+    -- Installed from source.
     force_setup = true,
 })
 
