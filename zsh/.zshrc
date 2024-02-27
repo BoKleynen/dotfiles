@@ -27,7 +27,6 @@ fi
 
 plugins=(
   git
-  asdf
   zsh-syntax-highlighting
 )
 
@@ -37,5 +36,13 @@ source $DOTFILES/zsh/p10k.zsh
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/zsh/aliases.zsh
 
+eval "$(mise activate zsh)"
 eval "$(direnv hook zsh)"
 
+# pnpm
+export PNPM_HOME="/Users/bokleynen/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
