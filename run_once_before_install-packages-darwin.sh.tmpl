@@ -1,0 +1,49 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+tap "fluxcd/tap"
+tap "getsentry/tools"
+tap "golangci/tap"
+tap "hashicorp/tap"
+tap "tinygo-org/tools"
+
+brew "age"
+brew "bat"
+brew "cocoapods"
+brew "direnv"
+brew "exa"
+brew "fd"
+brew "gh"
+brew "gnupg"
+brew "go"
+brew "helm"
+brew "kubernetes-cli"
+brew "kustomize"
+brew "minikube"
+brew "neovim"
+brew "pinentry-mac"
+brew "ripgrep"
+brew "sccache"
+brew "sops"
+brew "tldr"
+brew "tokei"
+brew "zellij"
+brew "hashicorp/tap/terraform"
+brew "tinygo-org/tools/tinygo"
+
+cask "discord"
+cask "docker"
+cask "gitkraken"
+cask "google-cloud-sdk"
+cask "jetbrains-toolbox"
+cask "keka"
+cask "postman"
+cask "signal"
+cask "spotify"
+
+mas "Amphetamine", id: 937984704
+mas "Slack", id: 803453959
+mas "Things", id: 904280696
+EOF
+{{ end -}}

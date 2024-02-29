@@ -45,8 +45,13 @@ lsp.configure("hls", {
     force_setup = true,
 })
 
+lsp.configure("ruff_lsp", {
+    on_attach = function (client, bufnr)
+       client.server_capabilities.hoverProvider = false
+    end,
+})
+
 lsp.configure("zls", {
-    -- Installed from source.
     force_setup = true,
 })
 
@@ -67,7 +72,6 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup {
   sources = {
     null_ls.builtins.formatting.black,
-    null_ls.builtins.diagnostics.ruff,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

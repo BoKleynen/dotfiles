@@ -1,0 +1,8 @@
+export DOTFILES="$HOME/.dotfiles"
+export XDG_CONFIG_HOME=$HOME/.config
+export GOPATH=$HOME/go
+export EDITOR=nvim
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+export GPG_TTY=$(tty)
+export CLOUDSDK_PYTHON="$HOME/.local/share/rtx/installs/python/3.9.18/bin/python"
+export ADVENT_OF_CODE_SESSION="53616c7465645f5f6a29c7cf39aeb18eced1f1f05914f90bc8c3f4c8278fa8d61873689077c89cea426755ef432b31c097eda3ff6da0fe316f9232ae186b09a0"

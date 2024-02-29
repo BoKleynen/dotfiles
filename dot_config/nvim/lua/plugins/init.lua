@@ -21,5 +21,6 @@ return {
             },
         },
     },
+    { "imsnif/kdl.vim", ft = "kdl"},
     { "ziglang/zig.vim", ft = "zig" },
 }

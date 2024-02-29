@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-
-echo 'Quit pasting in commands from the internet you lazy bum.'
-"$@"
-
