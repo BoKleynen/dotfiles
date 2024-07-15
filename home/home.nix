@@ -51,6 +51,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".ideavimrc".source = ./.ideavimrc;
     ".p10k.zsh".source = ./.p10k.zsh;
   };
 
