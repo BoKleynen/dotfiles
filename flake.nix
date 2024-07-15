@@ -23,6 +23,8 @@
         modules = [
           home/home.nix
           home/programs/git.nix
+          home/programs/alacritty.nix
+          home/programs/zellij.nix
         ];
 
         # Optionally use extraSpecialArgs

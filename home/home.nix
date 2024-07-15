@@ -30,10 +30,8 @@
 
     gnupg
 
-    alacritty
     neovim
     fzf
-    zellij
     direnv
 
     ripgrep
