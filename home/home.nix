@@ -21,8 +21,6 @@
     ];
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
@@ -49,6 +47,8 @@
 
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     google-cloud-sql-proxy
+
+    nixfmt-rfc-style
 
     discord
   ];

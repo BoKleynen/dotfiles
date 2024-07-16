@@ -13,7 +13,12 @@
     { nixpkgs, home-manager, ... }@inputs:
     let
       system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {
+          alloUnfree = true;
+        };
+      };
     in
     {
       homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
@@ -32,6 +37,6 @@
         # to pass through arguments to home.nix
       };
 
-      devShells.aarch64-darwin.default = pkgs.mkShell { buildInputs = [ pkgs.nixfmt-rfc-style ]; };
+      devShells.aarch64-darwin.default = pkgs.mkShell { buildInputs = [ ]; };
     };
 }
