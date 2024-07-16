@@ -39,6 +39,7 @@
       homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 
+        # Pass additional argument to home.nix
         extraSpecialArgs = {
           inherit inputs outputs;
         };
@@ -52,9 +53,6 @@
           home/programs/zellij.nix
           home/programs/k9s.nix
         ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
       };
     };
 }
