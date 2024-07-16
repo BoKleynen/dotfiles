@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  outputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   home.username = "bokleynen";
@@ -21,15 +26,21 @@
     ];
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    overlays = [
+      outputs.overlays.additions
+      outputs.overlays.unstable-packages
+    ];
+    config.allowUnfree = true;
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    git
     pinentry-tty
     delta
     gh
+    arcanist
 
     gnupg
 

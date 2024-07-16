@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -10,19 +12,36 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
-      system = "aarch64-darwin";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          alloUnfree = true;
-        };
-      };
+      inherit (self) outputs;
+
+      lib = nixpkgs.lib // home-manager.lib;
+
+      systems = [ "aarch64-darwin" ];
+      # This is a function that generates an attribute by calling a function you
+      # pass to it, with each system as an argument
+      forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
+      # Your custom packages
+      # Accessible through 'nix build', 'nix shell', etc
+      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+
+      # Your custom packages and modifications, exported as overlays
+      overlays = import ./overlays { inherit inputs; };
+
       homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
@@ -37,7 +56,5 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
-
-      devShells.aarch64-darwin.default = pkgs.mkShell { buildInputs = [ ]; };
     };
 }
