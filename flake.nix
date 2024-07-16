@@ -2,7 +2,6 @@
   description = "My dotfiles managed as a nix flake";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,11 +9,13 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    { nixpkgs, home-manager, ... }@inputs:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
       homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
@@ -30,5 +31,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
+
+      devShells.aarch64-darwin.default = pkgs.mkShell { buildInputs = [ pkgs.nixfmt-rfc-style ]; };
     };
 }

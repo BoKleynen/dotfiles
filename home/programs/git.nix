@@ -11,9 +11,7 @@
       ".direnv"
       ".idea"
     ];
-    includes = [
-      { path = "~/.gitconfig.local"; }
-    ];
+    includes = [ { path = "~/.gitconfig.local"; } ];
     extraConfig = {
       commit = {
         # TODO: Setup commit signing for non-work related stuff.

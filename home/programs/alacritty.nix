@@ -4,9 +4,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      import = [
-        "./base16_default_dark.toml"
-      ];
+      import = [ "./base16_default_dark.toml" ];
       working_directory = "None";
 
       font = {
@@ -36,7 +34,7 @@
 
       shell = {
         program = "/bin/zsh";
-        args = ["-l"];
+        args = [ "-l" ];
       };
 
       window = {
@@ -48,10 +46,26 @@
       };
 
       keyboard.bindings = [
-        { chars = "\\u001Bc"; key = "C"; mods = "Command"; }
-        { chars = "\\u001Bq"; key = "Q"; mods = "Command"; }
-        { chars = "\\u001Bx"; key = "X"; mods = "Command"; }
-        { chars = "\\u001Bz"; key = "Z"; mods = "Command"; }
+        {
+          chars = "\\u001Bc";
+          key = "C";
+          mods = "Command";
+        }
+        {
+          chars = "\\u001Bq";
+          key = "Q";
+          mods = "Command";
+        }
+        {
+          chars = "\\u001Bx";
+          key = "X";
+          mods = "Command";
+        }
+        {
+          chars = "\\u001Bz";
+          key = "Z";
+          mods = "Command";
+        }
       ];
     };
   };

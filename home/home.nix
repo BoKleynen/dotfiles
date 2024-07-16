@@ -15,7 +15,10 @@
 
   nix = {
     package = pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -43,7 +46,9 @@
     kubernetes-helm
     kubectl
     k9s
+
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
+    google-cloud-sql-proxy
 
     discord
   ];
@@ -54,7 +59,6 @@
     ".ideavimrc".source = ./.ideavimrc;
     ".p10k.zsh".source = ./.p10k.zsh;
   };
-
 
   home.sessionVariables = {
     EDITOR = "nvim";
