@@ -12,16 +12,18 @@
       ".idea"
     ];
     includes = [ { path = "~/.gitconfig.local"; } ];
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        light = false;
+        line-numbers = true;
+      };
+    };
     extraConfig = {
       commit = {
         # TODO: Setup commit signing for non-work related stuff.
         gpgSign = false;
-      };
-      core = {
-        pager = "delta";
-      };
-      interactive = {
-        diffFilter = "delta --color-only";
       };
       color = {
         diff = "auto";
@@ -46,11 +48,6 @@
       };
       diff = {
         colorMoved = "default";
-      };
-      delta = {
-        navigate = true;
-        light = false;
-        line-numbers = true;
       };
       url."git@github.com:".insteadOf = "https://github.com/";
     };

@@ -38,7 +38,6 @@
   # environment.
   home.packages = with pkgs; [
     pinentry-tty
-    delta
     gh
     arcanist
 
