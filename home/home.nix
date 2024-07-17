@@ -45,7 +45,6 @@
     neovim
     fzf
     ripgrep
-    fd
     jless
 
     kubernetes-helm

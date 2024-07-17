@@ -48,12 +48,13 @@
         # the path to your home.nix.
         modules = [
           home/home.nix
+          home/programs/alacritty.nix
           home/programs/bat.nix
           home/programs/eza.nix
+          home/programs/fd.nix
           home/programs/git.nix
-          home/programs/alacritty.nix
-          home/programs/zellij.nix
           home/programs/k9s.nix
+          home/programs/zellij.nix
         ];
       };
     };
