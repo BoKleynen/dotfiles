@@ -7,7 +7,6 @@
     userEmail = "kleynenbo@gmail.com";
     ignores = [
       ".DS_STORE"
-      ".envrc"
       ".direnv"
       ".idea"
     ];
