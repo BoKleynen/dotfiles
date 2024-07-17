@@ -56,6 +56,7 @@
           home/programs/git.nix
           home/programs/k9s.nix
           home/programs/zellij.nix
+          home/programs/zsh.nix
         ];
       };
     };
