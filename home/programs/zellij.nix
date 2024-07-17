@@ -1,11 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  programs.zellij = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      theme = "default";
-    };
+  enable = true;
+  enableZshIntegration = true;
+  settings = {
+    theme = "default";
   };
 }

@@ -3,7 +3,7 @@
   config,
   pkgs,
   ...
-}:
+}@input:
 
 {
   home.username = "bokleynen";
@@ -72,4 +72,15 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # TODO: loop over the files in ./programs/ and do this programatically.
+  programs.alacritty = import ./programs/alacritty.nix input;
+  programs.bat = import ./programs/bat.nix input;
+  programs.direnv = import ./programs/direnv.nix input;
+  programs.eza = import ./programs/eza.nix input;
+  programs.fd = import ./programs/fd.nix input;
+  programs.git = import ./programs/git.nix input;
+  programs.k9s = import ./programs/k9s.nix input;
+  programs.zellij = import ./programs/zellij.nix input;
+  programs.zsh = import ./programs/zsh.nix input;
 }

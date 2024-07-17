@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  programs.bat = {
-    enable = true;
-  };
+  enable = true;
 }
