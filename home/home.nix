@@ -46,6 +46,7 @@
     fzf
     ripgrep
     jless
+    yq-go
 
     kubernetes-helm
     kubectl
@@ -67,7 +68,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    XDG_CONFIG = "$HOME/.config";
   };
 
   # Let Home Manager install and manage itself.
