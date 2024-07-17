@@ -40,17 +40,12 @@
     pinentry-tty
     gh
     arcanist
-
     gnupg
 
     neovim
     fzf
-    direnv
-
     ripgrep
     fd
-    bat
-    eza
     jless
 
     kubernetes-helm
@@ -73,7 +68,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    PNPM_HOME = "/Users/bokleynen/Library/pnpm";
+    XDG_CONFIG = "$HOME/.config";
   };
 
   # Let Home Manager install and manage itself.

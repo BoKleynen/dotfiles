@@ -48,6 +48,8 @@
         # the path to your home.nix.
         modules = [
           home/home.nix
+          home/programs/bat.nix
+          home/programs/eza.nix
           home/programs/git.nix
           home/programs/alacritty.nix
           home/programs/zellij.nix
