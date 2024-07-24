@@ -70,6 +70,10 @@
     EDITOR = "nvim";
   };
 
+  home.sessionPath = [
+    "$HOME/go/bin"
+  ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -81,6 +85,7 @@
   programs.fd = import ./programs/fd.nix input;
   programs.git = import ./programs/git.nix input;
   programs.k9s = import ./programs/k9s.nix input;
+  programs.lazygit = import ./programs/lazygit.nix input;
   programs.zellij = import ./programs/zellij.nix input;
   programs.zsh = import ./programs/zsh.nix input;
 }
