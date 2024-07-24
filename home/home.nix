@@ -40,22 +40,18 @@
     pinentry-tty
     arcanist
     gnupg
-
     neovim
     fzf
     ripgrep
     jless
     yq-go
-
     kubernetes-helm
     kubectl
-
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     google-cloud-sql-proxy
-
     nixfmt-rfc-style
-
     discord
+    postman
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
