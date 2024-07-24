@@ -38,7 +38,6 @@
   # environment.
   home.packages = with pkgs; [
     pinentry-tty
-    gh
     arcanist
     gnupg
 
@@ -83,6 +82,7 @@
   programs.direnv = import ./programs/direnv.nix input;
   programs.eza = import ./programs/eza.nix input;
   programs.fd = import ./programs/fd.nix input;
+  programs.gh = import ./programs/gh.nix input;
   programs.git = import ./programs/git.nix input;
   programs.k9s = import ./programs/k9s.nix input;
   programs.lazygit = import ./programs/lazygit.nix input;
