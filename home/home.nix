@@ -65,9 +65,7 @@
     EDITOR = "nvim";
   };
 
-  home.sessionPath = [
-    "$HOME/go/bin"
-  ];
+  home.sessionPath = [ "$HOME/go/bin" ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
