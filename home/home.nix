@@ -84,4 +84,54 @@
   programs.lazygit = import ./programs/lazygit.nix input;
   programs.zellij = import ./programs/zellij.nix input;
   programs.zsh = import ./programs/zsh.nix input;
+
+  editorconfig = {
+    enable = true;
+    settings = {
+      "*" = {
+        charset = "utf-8";
+        insert_final_newline = true;
+        trim_trailing_whitespace = true;
+      };
+
+      "*.py" = {
+        indent_style = "space";
+        indent_size = 4;
+      };
+
+      "*.rb" = {
+        indent_style = "space";
+        indent_size = 2;
+      };
+
+      "*.go" = {
+        indent_style = "tab";
+        indent_size = 4;
+      };
+
+      "*.hs" = {
+        indent_style = "space";
+        indent_size = 2;
+      };
+
+      "*.idr" = {
+        indent_style = "space";
+        indent_size = 2;
+      };
+
+      "*.lua" = {
+        indent_style = "space";
+        indent_size = 3;
+      };
+
+      "*.nix" = {
+        indent_style = "space";
+        indent_size = 2;
+      };
+
+      "Makefile" = {
+        indent_style = "tab";
+      };
+    };
+  };
 }
