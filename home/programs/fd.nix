@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  enable = true;
+  programs.fd = {
+    enable = true;
+  };
 }

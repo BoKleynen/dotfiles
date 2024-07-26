@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  enable = true;
-  enableZshIntegration = true;
-  git = true;
-  extraOptions = [ ];
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+    git = true;
+    extraOptions = [ ];
+  };
 }

@@ -6,6 +6,20 @@
 }@input:
 
 {
+  imports = [
+    ./programs/alacritty.nix
+    ./programs/bat.nix
+    ./programs/direnv.nix
+    ./programs/eza.nix
+    ./programs/fd.nix
+    ./programs/gh.nix
+    ./programs/git.nix
+    ./programs/k9s.nix
+    ./programs/lazygit.nix
+    ./programs/zellij.nix
+    ./programs/zsh.nix
+  ];
+
   home.username = "bokleynen";
   home.homeDirectory = "/Users/bokleynen";
 
@@ -69,22 +83,6 @@
 
   home.sessionPath = [ "$HOME/go/bin" ];
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  # TODO: loop over the files in ./programs/ and do this programatically.
-  programs.alacritty = import ./programs/alacritty.nix input;
-  programs.bat = import ./programs/bat.nix input;
-  programs.direnv = import ./programs/direnv.nix input;
-  programs.eza = import ./programs/eza.nix input;
-  programs.fd = import ./programs/fd.nix input;
-  programs.gh = import ./programs/gh.nix input;
-  programs.git = import ./programs/git.nix input;
-  programs.k9s = import ./programs/k9s.nix input;
-  programs.lazygit = import ./programs/lazygit.nix input;
-  programs.zellij = import ./programs/zellij.nix input;
-  programs.zsh = import ./programs/zsh.nix input;
-
   editorconfig = {
     enable = true;
     settings = {
@@ -134,4 +132,7 @@
       };
     };
   };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }

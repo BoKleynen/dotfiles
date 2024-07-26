@@ -1,9 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  enable = true;
-  aliases = { };
-  settings = {
-    k9s = { };
+  programs.k9s = {
+    enable = true;
+    aliases = { };
+    settings = {
+      k9s = { };
+    };
   };
 }

@@ -1,52 +1,54 @@
 { config, pkgs, ... }:
 
 {
-  enable = true;
-  userName = "Bo Kleynen";
-  userEmail = "kleynenbo@gmail.com";
-  ignores = [
-    ".DS_STORE"
-    ".direnv"
-    ".idea"
-  ];
-  includes = [ { path = "~/.gitconfig.local"; } ];
-  delta = {
+  programs.git = {
     enable = true;
-    options = {
-      navigate = true;
-      light = false;
-      line-numbers = true;
+    userName = "Bo Kleynen";
+    userEmail = "kleynenbo@gmail.com";
+    ignores = [
+      ".DS_STORE"
+      ".direnv"
+      ".idea"
+    ];
+    includes = [ { path = "~/.gitconfig.local"; } ];
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        light = false;
+        line-numbers = true;
+      };
     };
-  };
-  extraConfig = {
-    commit = {
-      # TODO: Setup commit signing for non-work related stuff.
-      gpgSign = false;
+    extraConfig = {
+      commit = {
+        # TODO: Setup commit signing for non-work related stuff.
+        gpgSign = false;
+      };
+      color = {
+        diff = "auto";
+        status = "auto";
+        branch = "auto";
+        ui = true;
+      };
+      gpg = {
+        program = "gpg";
+      };
+      credential = {
+        helper = "osxkeychain";
+      };
+      pull = {
+        rebase = true;
+      };
+      init = {
+        defaultBranch = "main";
+      };
+      merge = {
+        conflictstyle = "diff3";
+      };
+      diff = {
+        colorMoved = "default";
+      };
+      url."git@github.com:".insteadOf = "https://github.com/";
     };
-    color = {
-      diff = "auto";
-      status = "auto";
-      branch = "auto";
-      ui = true;
-    };
-    gpg = {
-      program = "gpg";
-    };
-    credential = {
-      helper = "osxkeychain";
-    };
-    pull = {
-      rebase = true;
-    };
-    init = {
-      defaultBranch = "main";
-    };
-    merge = {
-      conflictstyle = "diff3";
-    };
-    diff = {
-      colorMoved = "default";
-    };
-    url."git@github.com:".insteadOf = "https://github.com/";
   };
 }
