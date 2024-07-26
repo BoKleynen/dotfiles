@@ -81,7 +81,10 @@
     EDITOR = "nvim";
   };
 
-  home.sessionPath = [ "$HOME/go/bin" ];
+  home.sessionPath = [
+    "$HOME/go/bin"
+    "$HOME/.local/bin"
+  ];
 
   editorconfig = {
     enable = true;

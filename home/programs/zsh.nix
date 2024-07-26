@@ -4,6 +4,9 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    autosuggestion = {
+      enable = true;
+    };
     shellAliases = {
       mv = "mv -i";
       k = "kubectl";
@@ -20,9 +23,6 @@
     '';
     initExtra = ''
       source $HOME/.p10k.zsh
-
-      path+="$HOME/.local/bin"
-      path+="$GOPATH/bin"
     '';
     plugins = [
       {
@@ -30,12 +30,10 @@
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
-      {
-        name = "zsh-syntax-highlighting";
-        src = pkgs.zsh-syntax-highlighting;
-        file = "share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh";
-      }
     ];
+    syntaxHighlighting = {
+      enable = true;
+    };
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
