@@ -36,6 +36,8 @@
       # Your custom packages and modifications, exported as overlays
       overlays = import ./overlays { inherit inputs; };
 
+      homeManagerModules = import ./modules/home-manager;
+
       homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 

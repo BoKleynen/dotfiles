@@ -7,6 +7,8 @@
 
 {
   imports = [
+    outputs.homeManagerModules.zed
+
     ./programs/alacritty.nix
     ./programs/bat.nix
     ./programs/direnv.nix
@@ -16,6 +18,7 @@
     ./programs/git.nix
     ./programs/k9s.nix
     ./programs/lazygit.nix
+    ./programs/zed.nix
     ./programs/zellij.nix
     ./programs/zsh.nix
   ];
