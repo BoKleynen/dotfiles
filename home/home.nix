@@ -18,6 +18,7 @@
     ./programs/git.nix
     ./programs/k9s.nix
     ./programs/lazygit.nix
+    ./programs/vscode.nix
     ./programs/zed.nix
     ./programs/zellij.nix
     ./programs/zsh.nix
