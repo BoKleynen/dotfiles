@@ -18,6 +18,7 @@
     ./programs/git.nix
     ./programs/k9s.nix
     ./programs/lazygit.nix
+    ./programs/neovim.nix
     ./programs/vscode.nix
     ./programs/zed.nix
     ./programs/zellij.nix
@@ -58,7 +59,6 @@
     pinentry-tty
     arcanist
     gnupg
-    neovim
     fzf
     ripgrep
     jless
@@ -83,9 +83,7 @@
     ".p10k.zsh".source = ./.p10k.zsh;
   };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = {};
 
   home.sessionPath = [
     "$HOME/go/bin"
