@@ -10,7 +10,6 @@
     shellAliases = {
       mv = "mv -i";
       k = "kubectl";
-      nv = "nvim";
       ls = "eza";
       la = "eza -la";
       ll = "eza -l --color always --icons -a -s type";

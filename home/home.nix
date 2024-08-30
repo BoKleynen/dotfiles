@@ -83,7 +83,7 @@
     ".p10k.zsh".source = ./.p10k.zsh;
   };
 
-  home.sessionVariables = {};
+  home.sessionVariables = { };
 
   home.sessionPath = [
     "$HOME/go/bin"
