@@ -7,6 +7,11 @@
     autosuggestion = {
       enable = true;
     };
+    history = {
+      ignoreAllDups = true;
+      save = 20000;
+      size = 10000;
+    };
     shellAliases = {
       mv = "mv -i";
       k = "kubectl";
