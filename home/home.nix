@@ -10,6 +10,7 @@
     outputs.homeManagerModules.zed
 
     ./programs/alacritty.nix
+    ./programs/atuin.nix
     ./programs/bat.nix
     ./programs/direnv.nix
     ./programs/eza.nix
