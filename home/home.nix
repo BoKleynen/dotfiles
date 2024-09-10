@@ -5,6 +5,9 @@
   ...
 }@input:
 
+let
+  tomlFormat = pkgs.formats.toml { };
+in
 {
   imports = [
     outputs.homeManagerModules.zed
@@ -83,6 +86,29 @@
   home.file = {
     ".ideavimrc".source = ./.ideavimrc;
     ".p10k.zsh".source = ./.p10k.zsh;
+    nvim = {
+      recursive = false;
+      source = ../nvim;
+      target = ".config/nvim";
+    };
+    cargo = {
+      target = ".cargo/config.toml";
+      source = (
+        tomlFormat.generate "config.toml" {
+          net = {
+            "git-fetch-with-cli" = true;
+          };
+          registries."crates-io" = {
+            protocol = "sparse";
+          };
+          target = {
+            "aarch64-apple-darwin" = {
+              rustflags = [ "-Ctarget-cpu=native" ];
+            };
+          };
+        }
+      );
+    };
   };
 
   home.sessionVariables = { };
