@@ -66,16 +66,13 @@ in
     fzf
     ripgrep
     jless
+    jq
     yq-go
     kubernetes-helm
     kubectl
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     google-cloud-sql-proxy
     nixfmt-rfc-style
-    discord
-    postman
-    keka
-    iina
     rustup
     natscli
     cmctl
