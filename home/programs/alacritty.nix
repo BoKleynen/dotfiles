@@ -41,7 +41,7 @@
         decorations = "full";
         dynamic_title = true;
         opacity = 1.0;
-        startup_mode = "Windowed";
+        startup_mode = "Maximized";
         title = "Alacritty";
       };
 
