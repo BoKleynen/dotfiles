@@ -62,6 +62,7 @@ in
   home.packages = with pkgs; [
     arcanist
     pinentry-tty
+    postman
     gnupg
     fzf
     ripgrep
@@ -76,6 +77,8 @@ in
     rustup
     natscli
     cmctl
+    zig
+    zls
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -83,11 +86,11 @@ in
   home.file = {
     ".ideavimrc".source = ./.ideavimrc;
     ".p10k.zsh".source = ./.p10k.zsh;
-    nvim = {
-      recursive = false;
-      source = ../nvim;
-      target = ".config/nvim";
-    };
+    # nvim = {
+    #   recursive = false;
+    #   source = ../nvim;
+    #   target = ".config/nvim";
+    # };
     cargo = {
       target = ".cargo/config.toml";
       source = (
