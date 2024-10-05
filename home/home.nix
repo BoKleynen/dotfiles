@@ -64,6 +64,7 @@ in
     pinentry-tty
     postman
     gnupg
+    grpcurl
     fzf
     ripgrep
     jless
