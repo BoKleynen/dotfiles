@@ -13,41 +13,37 @@
   };
 
   outputs =
-    {
+    inputs@{
       self,
-      nixpkgs,
+      flake-parts,
       home-manager,
+      nixpkgs,
       ...
-    }@inputs:
-    let
-      inherit (self) outputs;
+    }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      flake = {
+        overlays = import ./overlays { inherit inputs; };
 
-      systems = [ "aarch64-darwin" ];
-      # This is a function that generates an attribute by calling a function you
-      # pass to it, with each system as an argument
-      forAllSystems = nixpkgs.lib.genAttrs systems;
-    in
-    {
-      # Your custom packages
-      # Accessible through 'nix build', 'nix shell', etc
-      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+        homeManagerModules = import ./modules/home-manager;
+        homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 
-      # Your custom packages and modifications, exported as overlays
-      overlays = import ./overlays { inherit inputs; };
+          # Pass additional argument to home.nix
+          extraSpecialArgs = {
+            inherit (self) inputs outputs;
+          };
 
-      homeManagerModules = import ./modules/home-manager;
-
-      homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-
-        # Pass additional argument to home.nix
-        extraSpecialArgs = {
-          inherit inputs outputs;
+          # Specify your home configuration modules here, for example,
+          # the path to your home.nix.
+          modules = [ home/home.nix ];
         };
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ home/home.nix ];
       };
+      systems = [ "aarch64-darwin" ];
+      perSystem =
+        { pkgs, self, ... }:
+        {
+          packages = import ./pkgs { inherit pkgs; };
+        };
     };
 }
