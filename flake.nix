@@ -44,6 +44,11 @@
         { pkgs, self, ... }:
         {
           packages = import ./pkgs { inherit pkgs; };
+          devShells.default = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              just
+            ];
+          };
         };
     };
 }
