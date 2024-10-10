@@ -1,4 +1,5 @@
 {
+  # https://nixos.wiki/wiki/Flakes
   description = "My dotfiles managed as a nix flake";
 
   inputs = {
