@@ -26,6 +26,8 @@
         overlays = import ./overlays { inherit inputs; };
 
         homeManagerModules = import ./modules/home-manager;
+
+        # work machine
         homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 
@@ -38,18 +40,21 @@
           # the path to your home.nix.
           modules = [ home/home.nix ];
         };
-
       };
       systems = [ "aarch64-darwin" ];
       perSystem =
         { pkgs, self, ... }:
         {
+          # custom packages
           packages = import ./pkgs { inherit pkgs; };
+
+          # shell for working on the home-manager config.
           devShells.default = pkgs.mkShell {
             buildInputs = with pkgs; [
               just
             ];
           };
+
           formatter = pkgs.nixfmt-rfc-style;
         };
     };

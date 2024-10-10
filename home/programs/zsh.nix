@@ -19,6 +19,7 @@
       la = "eza -la";
       ll = "eza -l --color always --icons -a -s type";
       cat = "bat -pp";
+      hm = "home-manager";
     };
     initExtraFirst = ''
       if [[ -r "$${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$${(%):-%n}.zsh" ]]; then
