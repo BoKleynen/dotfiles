@@ -50,6 +50,7 @@
               just
             ];
           };
+          formatter = pkgs.nixfmt-rfc-style;
         };
     };
 }
