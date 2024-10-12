@@ -11,23 +11,6 @@ in
 {
   imports = [
     outputs.homeManagerModules.zed
-
-    ./programs/alacritty.nix
-    ./programs/atuin.nix
-    ./programs/bat.nix
-    ./programs/direnv.nix
-    ./programs/eza.nix
-    ./programs/fd.nix
-    ./programs/gh.nix
-    ./programs/git.nix
-    ./programs/go.nix
-    ./programs/k9s.nix
-    ./programs/lazygit.nix
-    ./programs/neovim.nix
-    ./programs/vscode.nix
-    ./programs/zed.nix
-    ./programs/zellij.nix
-    ./programs/zsh.nix
   ];
 
   home.username = "bokleynen";

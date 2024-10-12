@@ -38,7 +38,26 @@
 
           # Specify your home configuration modules here, for example,
           # the path to your home.nix.
-          modules = [ home/home.nix ];
+          modules = [
+            home/home.nix
+
+            ./home/programs/alacritty.nix
+            ./home/programs/atuin.nix
+            ./home/programs/bat.nix
+            ./home/programs/direnv.nix
+            ./home/programs/eza.nix
+            ./home/programs/fd.nix
+            ./home/programs/gh.nix
+            ./home/programs/git.nix
+            ./home/programs/go.nix
+            ./home/programs/k9s.nix
+            ./home/programs/lazygit.nix
+            ./home/programs/neovim.nix
+            ./home/programs/vscode.nix
+            ./home/programs/zed.nix
+            ./home/programs/zellij.nix
+            ./home/programs/zsh.nix
+          ];
         };
       };
       systems = [ "aarch64-darwin" ];
