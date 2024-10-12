@@ -23,7 +23,7 @@ in
     ./programs/k9s.nix
     ./programs/lazygit.nix
     ./programs/neovim.nix
-    #./programs/vscode.nix
+    ./programs/vscode.nix
     ./programs/zed.nix
     ./programs/zellij.nix
     ./programs/zsh.nix
