@@ -1,9 +1,10 @@
 {
+  inputs,
   outputs,
   config,
   pkgs,
   ...
-}@input:
+}:
 
 let
   tomlFormat = pkgs.formats.toml { };
@@ -37,6 +38,7 @@ in
     overlays = [
       outputs.overlays.additions
       outputs.overlays.unstable-packages
+      inputs.zig.overlays.default
     ];
     config.allowUnfree = true;
   };
@@ -62,8 +64,8 @@ in
     rustup
     natscli
     cmctl
-    zig
-    zls
+
+    zigpkgs.master
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
