@@ -20,6 +20,7 @@ in
     ./programs/fd.nix
     ./programs/gh.nix
     ./programs/git.nix
+    ./programs/go.nix
     ./programs/k9s.nix
     ./programs/lazygit.nix
     ./programs/neovim.nix
