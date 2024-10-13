@@ -4,7 +4,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,16 +24,28 @@
     inputs@{
       self,
       flake-parts,
+      darwin,
       home-manager,
       nixpkgs,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
-        overlays = import ./overlays { inherit inputs; };
+        # overlays = import ./overlays { inherit inputs; };
+
+        darwinConfigurations."Bos-Work-MacBook-Pro" = darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = { inherit inputs; };
+          modules = [
+            home-manager.darwinModules.home-manager
+            ./users/bokleynen/darwin.nix
+            {
+              home-manager.users.bokleynen = import ./users/bokleynen/home.nix;
+            }
+          ];
+        };
 
         homeManagerModules = import ./modules/home-manager;
-
         # work machine
         homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;

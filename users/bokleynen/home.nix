@@ -10,10 +10,10 @@ let
   tomlFormat = pkgs.formats.toml { };
 in
 {
-  imports = [
-    outputs.homeManagerModules.zed
-  ];
-
+  # imports = [
+  #   outputs.homeManagerModules.zed
+  # ];
+  #
   home.username = "bokleynen";
   home.homeDirectory = "/Users/bokleynen";
 
@@ -35,18 +35,18 @@ in
   };
 
   nixpkgs = {
-    overlays = [
-      outputs.overlays.additions
-      outputs.overlays.unstable-packages
-      inputs.zig.overlays.default
-    ];
+    # overlays = [
+    #   outputs.overlays.additions
+    #   outputs.overlays.unstable-packages
+    #   inputs.zig.overlays.default
+    # ];
     config.allowUnfree = true;
   };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    arcanist
+    # arcanist
     pinentry-tty
     postman
     gnupg
@@ -65,7 +65,7 @@ in
     natscli
     cmctl
 
-    zigpkgs.master
+    # zigpkgs.master
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -98,7 +98,11 @@ in
     };
   };
 
-  home.sessionVariables = { };
+  home.sessionVariables = {
+    LANG = "en_US.UTF-8";
+    LC_CTYPE = "en_US.UTF-8";
+    LC_ALL = "en_US.UTF-8";
+  };
 
   home.sessionPath = [
     "$HOME/go/bin"
