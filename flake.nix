@@ -40,14 +40,14 @@
           };
           modules = [
             { nixpkgs.config.allowUnfree = true; }
-            ./machines/gs.nix
-            ./users/bokleynen/darwin.nix
+            machines/gs.nix
+            users/bokleynen/darwin.nix
             # home-manager config
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.bokleynen = import ./users/bokleynen/home.nix;
+              home-manager.users.bokleynen = users/bokleynen/home.nix;
             }
           ];
         };

@@ -55,7 +55,6 @@ in
   home.packages = with pkgs; [
     # arcanist
     pinentry-tty
-    postman
     gnupg
     grpcurl
     fzf
