@@ -35,47 +35,39 @@
 
         darwinConfigurations."Bos-Work-MacBook-Pro" = darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
             home-manager.darwinModules.home-manager
             ./users/bokleynen/darwin.nix
             {
+              system.stateVersion = 5;
+
+              # We install Nix using a separate installer so we don't want nix-darwin
+              # to manage it for us. This tells nix-darwin to just use whatever is running.
+              nix.useDaemon = true;
+              nix = {
+                settings.experimental-features = [
+                  "nix-command"
+                  "flakes"
+                ];
+              };
+
+              # zsh is the default shell on Mac and we want to make sure that we're
+              # configuring the rc correctly with nix-darwin paths.
+              programs.zsh.enable = true;
+              programs.zsh.shellInit = ''
+                # Nix
+                if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+                  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+                fi
+                # End Nix
+              '';
+            }
+            {
               home-manager.users.bokleynen = import ./users/bokleynen/home.nix;
             }
-          ];
-        };
-
-        homeManagerModules = import ./modules/home-manager;
-        # work machine
-        homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-
-          # Pass additional argument to home.nix
-          extraSpecialArgs = {
-            inherit (self) inputs outputs;
-          };
-
-          # Specify your home configuration modules here, for example,
-          # the path to your home.nix.
-          modules = [
-            home/home.nix
-
-            ./home/programs/alacritty.nix
-            ./home/programs/atuin.nix
-            ./home/programs/bat.nix
-            ./home/programs/direnv.nix
-            ./home/programs/eza.nix
-            ./home/programs/fd.nix
-            ./home/programs/gh.nix
-            ./home/programs/git.nix
-            ./home/programs/go.nix
-            ./home/programs/k9s.nix
-            ./home/programs/lazygit.nix
-            ./home/programs/neovim.nix
-            ./home/programs/vscode.nix
-            ./home/programs/zed.nix
-            ./home/programs/zellij.nix
-            ./home/programs/zsh.nix
           ];
         };
       };

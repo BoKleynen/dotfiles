@@ -10,9 +10,24 @@ let
   tomlFormat = pkgs.formats.toml { };
 in
 {
-  # imports = [
-  #   outputs.homeManagerModules.zed
-  # ];
+  imports = [
+    #   outputs.homeManagerModules.zed
+    programs/alacritty.nix
+    programs/atuin.nix
+    programs/bat.nix
+    programs/direnv.nix
+    programs/eza.nix
+    programs/fd.nix
+    programs/gh.nix
+    programs/git.nix
+    programs/go.nix
+    programs/k9s.nix
+    programs/lazygit.nix
+    programs/neovim.nix
+    programs/vscode.nix
+    programs/zellij.nix
+    programs/zsh.nix
+  ];
   #
   home.username = "bokleynen";
   home.homeDirectory = "/Users/bokleynen";
@@ -25,14 +40,6 @@ in
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.11";
-
-  nix = {
-    package = pkgs.nix;
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-  };
 
   nixpkgs = {
     # overlays = [
