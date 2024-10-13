@@ -39,33 +39,14 @@
             inherit inputs;
           };
           modules = [
-            home-manager.darwinModules.home-manager
+            { nixpkgs.config.allowUnfree = true; }
+            ./machines/gs.nix
             ./users/bokleynen/darwin.nix
+            # home-manager config
+            home-manager.darwinModules.home-manager
             {
-              system.stateVersion = 5;
-
-              # We install Nix using a separate installer so we don't want nix-darwin
-              # to manage it for us. This tells nix-darwin to just use whatever is running.
-              nix.useDaemon = true;
-              nix = {
-                settings.experimental-features = [
-                  "nix-command"
-                  "flakes"
-                ];
-              };
-
-              # zsh is the default shell on Mac and we want to make sure that we're
-              # configuring the rc correctly with nix-darwin paths.
-              programs.zsh.enable = true;
-              programs.zsh.shellInit = ''
-                # Nix
-                if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-                  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-                fi
-                # End Nix
-              '';
-            }
-            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
               home-manager.users.bokleynen = import ./users/bokleynen/home.nix;
             }
           ];
