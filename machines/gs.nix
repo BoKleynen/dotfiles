@@ -22,4 +22,6 @@
     fi
     # End Nix
   '';
+
+  system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
 }

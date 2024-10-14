@@ -10,7 +10,6 @@
     casks = [
       "arc"
       "discord"
-      "raycast"
       "signal"
       "slack"
       "spotify"
