@@ -4,7 +4,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,47 +24,26 @@
     inputs@{
       self,
       flake-parts,
+      darwin,
       home-manager,
       nixpkgs,
       ...
     }:
+    let
+      # Overlays is the list of overlays we want to apply from flake inputs.
+      overlays = [
+        inputs.zig.overlays.default
+      ];
+
+      mkSystem = import ./lib/mksystem.nix {
+        inherit overlays nixpkgs inputs;
+      };
+    in
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
-        overlays = import ./overlays { inherit inputs; };
-
-        homeManagerModules = import ./modules/home-manager;
-
-        # work machine
-        homeConfigurations."bokleynen" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-
-          # Pass additional argument to home.nix
-          extraSpecialArgs = {
-            inherit (self) inputs outputs;
-          };
-
-          # Specify your home configuration modules here, for example,
-          # the path to your home.nix.
-          modules = [
-            home/home.nix
-
-            ./home/programs/alacritty.nix
-            ./home/programs/atuin.nix
-            ./home/programs/bat.nix
-            ./home/programs/direnv.nix
-            ./home/programs/eza.nix
-            ./home/programs/fd.nix
-            ./home/programs/gh.nix
-            ./home/programs/git.nix
-            ./home/programs/go.nix
-            ./home/programs/k9s.nix
-            ./home/programs/lazygit.nix
-            ./home/programs/neovim.nix
-            ./home/programs/vscode.nix
-            ./home/programs/zed.nix
-            ./home/programs/zellij.nix
-            ./home/programs/zsh.nix
-          ];
+        darwinConfigurations."Bos-Work-MacBook-Pro" = mkSystem {
+          system = "aarch64-darwin";
+          user = "bokleynen";
         };
       };
       systems = [ "aarch64-darwin" ];
