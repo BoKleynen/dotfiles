@@ -11,3 +11,4 @@ Other configurations I copied from:
 
 - [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs)
 - [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+- [mitchellh/nixos-config](https://github.com/mitchellh/nixos-config)

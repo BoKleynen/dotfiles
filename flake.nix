@@ -29,27 +29,21 @@
       nixpkgs,
       ...
     }:
+    let
+      # Overlays is the list of overlays we want to apply from flake inputs.
+      overlays = [
+        inputs.zig.overlays.default
+      ];
+
+      mkSystem = import ./lib/mksystem.nix {
+        inherit overlays nixpkgs inputs;
+      };
+    in
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
-        # overlays = import ./overlays { inherit inputs; };
-
-        darwinConfigurations."Bos-Work-MacBook-Pro" = darwin.lib.darwinSystem {
+        darwinConfigurations."Bos-Work-MacBook-Pro" = mkSystem "Bos-Work-MacBook-Pro" {
           system = "aarch64-darwin";
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            { nixpkgs.config.allowUnfree = true; }
-            machines/gs.nix
-            users/bokleynen/darwin.nix
-            # home-manager config
-            home-manager.darwinModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.bokleynen = users/bokleynen/home.nix;
-            }
-          ];
+          user = "bokleynen";
         };
       };
       systems = [ "aarch64-darwin" ];
