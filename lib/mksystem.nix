@@ -3,7 +3,6 @@
   overlays,
   inputs,
 }:
-name:
 {
   system,
   user,

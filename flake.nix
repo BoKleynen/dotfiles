@@ -41,7 +41,7 @@
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
-        darwinConfigurations."Bos-Work-MacBook-Pro" = mkSystem "Bos-Work-MacBook-Pro" {
+        darwinConfigurations."Bos-Work-MacBook-Pro" = mkSystem {
           system = "aarch64-darwin";
           user = "bokleynen";
         };
