@@ -25,7 +25,7 @@ in
     programs/zellij.nix
     programs/zsh.nix
   ];
-  #
+
   home.username = "bokleynen";
   home.homeDirectory = "/Users/bokleynen";
 
