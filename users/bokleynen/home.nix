@@ -1,6 +1,4 @@
 {
-  inputs,
-  outputs,
   config,
   pkgs,
   ...
@@ -11,7 +9,21 @@ let
 in
 {
   imports = [
-    outputs.homeManagerModules.zed
+    programs/alacritty.nix
+    programs/atuin.nix
+    programs/bat.nix
+    programs/direnv.nix
+    programs/eza.nix
+    programs/fd.nix
+    programs/gh.nix
+    programs/git.nix
+    programs/go.nix
+    programs/k9s.nix
+    programs/lazygit.nix
+    programs/neovim.nix
+    programs/vscode.nix
+    programs/zellij.nix
+    programs/zsh.nix
   ];
 
   home.username = "bokleynen";
@@ -26,29 +38,15 @@ in
   # release notes.
   home.stateVersion = "24.11";
 
-  nix = {
-    package = pkgs.nix;
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-  };
-
   nixpkgs = {
-    overlays = [
-      outputs.overlays.additions
-      outputs.overlays.unstable-packages
-      inputs.zig.overlays.default
-    ];
     config.allowUnfree = true;
   };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    arcanist
+    # arcanist
     pinentry-tty
-    postman
     gnupg
     grpcurl
     fzf
@@ -98,7 +96,11 @@ in
     };
   };
 
-  home.sessionVariables = { };
+  home.sessionVariables = {
+    LANG = "en_US.UTF-8";
+    LC_CTYPE = "en_US.UTF-8";
+    LC_ALL = "en_US.UTF-8";
+  };
 
   home.sessionPath = [
     "$HOME/go/bin"
