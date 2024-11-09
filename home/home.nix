@@ -63,7 +63,9 @@ in
     nixfmt-rfc-style
     rustup
     natscli
+    nmap
     cmctl
+    zed-editor
 
     zigpkgs.master
   ];
@@ -103,6 +105,7 @@ in
   home.sessionPath = [
     "$HOME/go/bin"
     "$HOME/.local/bin"
+    "/Applications/Docker.app/Contents/Resources/bin"
   ];
 
   editorconfig = {
