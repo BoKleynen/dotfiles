@@ -4,6 +4,7 @@
   programs.zed = {
     enable = true;
     settings = {
+      vim_mode = true;
       features = {
         inline_completion_provider = "none";
       };
