@@ -75,11 +75,10 @@ in
   home.file = {
     ".ideavimrc".source = ./.ideavimrc;
     ".p10k.zsh".source = ./.p10k.zsh;
-    # nvim = {
-    #   recursive = false;
-    #   source = ../nvim;
-    #   target = ".config/nvim";
-    # };
+    ghostty = {
+      target = ".config/ghostty/config";
+      source = ./ghostty;
+    };
     cargo = {
       target = ".cargo/config.toml";
       source = (
