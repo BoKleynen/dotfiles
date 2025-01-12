@@ -5,7 +5,7 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      theme = "default";
+      theme = "rose-pine";
     };
   };
 }
