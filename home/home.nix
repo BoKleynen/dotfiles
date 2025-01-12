@@ -66,6 +66,7 @@ in
     nmap
     cmctl
     zed-editor
+    minikube
 
     zigpkgs.master
   ];
