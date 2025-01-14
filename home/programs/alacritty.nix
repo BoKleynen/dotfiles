@@ -2,7 +2,7 @@
 
 {
   programs.alacritty = {
-    enable = true;
+    enable = false;
     settings = {
       import = [ "./base16_default_dark.toml" ];
       working_directory = "None";

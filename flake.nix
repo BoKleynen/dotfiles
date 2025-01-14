@@ -45,6 +45,7 @@
             home/home.nix
 
             ./home/programs/atuin.nix
+            ./home/programs/alacritty.nix
             ./home/programs/bat.nix
             ./home/programs/direnv.nix
             ./home/programs/eza.nix
