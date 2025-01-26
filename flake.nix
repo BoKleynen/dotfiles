@@ -51,6 +51,7 @@
             ./home/programs/eza.nix
             ./home/programs/fd.nix
             ./home/programs/gh.nix
+            ./home/programs/ghostty.nix
             ./home/programs/git.nix
             ./home/programs/go.nix
             ./home/programs/k9s.nix
