@@ -67,6 +67,7 @@ in
     cmctl
     zed-editor
     minikube
+    tree
 
     zigpkgs.master
   ];
@@ -105,7 +106,6 @@ in
   home.sessionPath = [
     "$HOME/go/bin"
     "$HOME/.local/bin"
-    "/Applications/Docker.app/Contents/Resources/bin"
   ];
 
   editorconfig = {
