@@ -54,6 +54,7 @@
             ./home/programs/ghostty.nix
             ./home/programs/git.nix
             ./home/programs/go.nix
+            ./home/programs/jujutsu.nix
             ./home/programs/k9s.nix
             ./home/programs/lazygit.nix
             ./home/programs/neovim.nix

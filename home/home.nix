@@ -46,7 +46,6 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    arcanist
     pinentry-tty
     postman
     gnupg
@@ -56,6 +55,7 @@ in
     jless
     jq
     yq-go
+    kind
     kubernetes-helm
     kubectl
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
@@ -67,6 +67,7 @@ in
     cmctl
     zed-editor
     minikube
+    tldr
     tree
 
     zigpkgs.master
