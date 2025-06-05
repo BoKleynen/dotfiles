@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   programs.zsh = {
@@ -21,14 +26,21 @@
       cat = "bat -pp";
       hm = "home-manager";
     };
-    initExtraFirst = ''
-      if [[ -r "$${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$${(%):-%n}.zsh" ]]; then
-        source "$${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$${(%):-%n}.zsh"
-      fi
-    '';
-    initExtra = ''
-      source $HOME/.p10k.zsh
-    '';
+    initContent =
+      let
+        first = lib.mkBefore ''
+          if [[ -r "$${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$${(%):-%n}.zsh" ]]; then
+            source "$${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-$${(%):-%n}.zsh"
+          fi
+        '';
+        extra = ''
+          source $HOME/.p10k.zsh
+        '';
+      in
+      lib.mkMerge [
+        first
+        extra
+      ];
     plugins = [
       {
         name = "powerlevel10k";
