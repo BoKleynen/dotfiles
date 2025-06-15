@@ -8,7 +8,7 @@
         email = "kleynenbo@gmail.com";
       };
       ui = {
-        paginate = "never";
+        paginate = "auto";
       };
     };
   };
