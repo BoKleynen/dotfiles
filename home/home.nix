@@ -54,6 +54,7 @@ in
     ripgrep
     jless
     jq
+    just
     yq-go
     kind
     kubernetes-helm
@@ -66,11 +67,14 @@ in
     rustup
     natscli
     nmap
+    nodejs_22
     cmctl
     zed-editor
     minikube
     tldr
     tree
+    typst
+    graphviz
 
     zigpkgs.master
   ];
