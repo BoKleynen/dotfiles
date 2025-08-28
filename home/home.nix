@@ -10,9 +10,7 @@ let
   tomlFormat = pkgs.formats.toml { };
 in
 {
-  imports = [
-    outputs.homeManagerModules.zed
-  ];
+  imports = [];
 
   home.username = "bokleynen";
   home.homeDirectory = "/Users/bokleynen";
@@ -60,7 +58,6 @@ in
     kubernetes-helm
     kubectl
     git-cliff
-    git-branchless
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     google-cloud-sql-proxy
     nixfmt-rfc-style
@@ -69,7 +66,6 @@ in
     nmap
     nodejs_22
     cmctl
-    zed-editor
     minikube
     tldr
     tree

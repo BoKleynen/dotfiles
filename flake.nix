@@ -59,7 +59,6 @@
             ./home/programs/lazygit.nix
             ./home/programs/neovim.nix
             ./home/programs/vscode.nix
-            ./home/programs/zed.nix
             ./home/programs/zellij.nix
             ./home/programs/zsh.nix
           ];
