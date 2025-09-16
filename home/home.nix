@@ -57,7 +57,7 @@ in
     kind
     kubernetes-helm
     kubectl
-    git-cliff
+    # git-cliff
     (google-cloud-sdk.withExtraComponents [ google-cloud-sdk.components.gke-gcloud-auth-plugin ])
     google-cloud-sql-proxy
     nixfmt-rfc-style
@@ -103,8 +103,6 @@ in
       );
     };
   };
-
-  home.sessionVariables = { };
 
   home.sessionPath = [
     "$HOME/go/bin"
