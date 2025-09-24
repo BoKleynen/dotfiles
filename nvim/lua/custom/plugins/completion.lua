@@ -35,6 +35,6 @@ return { -- Autocompletion
     "hrsh7th/cmp-path",
   },
   config = function()
-    require "bo.cmp"
+    require "custom.completion"
   end,
 }

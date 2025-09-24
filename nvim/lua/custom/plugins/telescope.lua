@@ -14,6 +14,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
   },
   config = function()
-    require "bo.telescope"
+    require "custom.telescope"
   end,
 }
