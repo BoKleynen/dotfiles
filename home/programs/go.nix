@@ -5,7 +5,7 @@
     enable = true;
     package = pkgs.go_1_25;
     env = {
-      GOPATH = "go";
+      GOPATH = "/Users/bokleynen/go";
     };
   };
 }
