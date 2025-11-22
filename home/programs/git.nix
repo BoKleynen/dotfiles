@@ -3,23 +3,17 @@
 {
   programs.git = {
     enable = true;
-    userName = "Bo Kleynen";
-    userEmail = "kleynenbo@gmail.com";
     ignores = [
       ".DS_STORE"
       ".direnv"
       ".idea"
     ];
     includes = [ { path = "~/.gitconfig.local"; } ];
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        light = false;
-        line-numbers = true;
+    settings = {
+      user = {
+        name = "Bo Kleynen";
+        email = "kleynenbo@gmail.com";
       };
-    };
-    extraConfig = {
       core = {
         compression = 9;
         whitespace = "error";
@@ -41,7 +35,7 @@
       credential = {
         helper = "osxkeychain";
       };
-      push = {};
+      push = { };
       pull = {
         default = "current";
         rebase = true;

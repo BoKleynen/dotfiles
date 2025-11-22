@@ -47,6 +47,7 @@
             ./home/programs/atuin.nix
             ./home/programs/alacritty.nix
             ./home/programs/bat.nix
+            ./home/programs/delta.nix
             ./home/programs/direnv.nix
             ./home/programs/eza.nix
             ./home/programs/fd.nix
