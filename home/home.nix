@@ -10,7 +10,7 @@ let
   tomlFormat = pkgs.formats.toml { };
 in
 {
-  imports = [];
+  imports = [ ];
 
   home.username = "bokleynen";
   home.homeDirectory = "/Users/bokleynen";
@@ -44,6 +44,7 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    aapt
     pinentry-tty
     postman
     gnupg
