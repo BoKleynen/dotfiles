@@ -8,6 +8,7 @@ return {
         lua = { "stylua" },
         nix = { "nixfmt" },
         python = { "ruff_format" },
+        haskell = { "ormolu" },
       },
       format_on_save = {
         -- These options will be passed to conform.format()

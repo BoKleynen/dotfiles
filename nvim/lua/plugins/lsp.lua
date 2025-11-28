@@ -23,6 +23,9 @@ return {
         end,
       })
 
+      vim.lsp.config("luals", {
+        hint = { enable = true },
+      })
       vim.lsp.config("rust_analyzer", {})
       vim.lsp.config("gopls", {
         settings = {
@@ -31,9 +34,12 @@ return {
           },
         },
       })
+      vim.lsp.config("hls", {})
 
       -- Installed through rustup.
-      vim.lsp.enable "rust_analyzer"
+      vim.lsp.enable { "hls", "rust_analyzer" }
+
+      vim.diagnostic.config { virtual_text = true, virtual_lines = false }
     end,
   },
 }
