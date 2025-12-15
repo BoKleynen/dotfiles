@@ -57,7 +57,6 @@
             ./home/programs/go.nix
             ./home/programs/jujutsu.nix
             ./home/programs/k9s.nix
-            ./home/programs/lazygit.nix
             ./home/programs/neovim.nix
             ./home/programs/vscode.nix
             ./home/programs/zellij.nix
