@@ -33,11 +33,6 @@ in
   };
 
   nixpkgs = {
-    overlays = [
-      outputs.overlays.additions
-      outputs.overlays.unstable-packages
-      inputs.zig.overlays.default
-    ];
     config.allowUnfree = true;
   };
 
@@ -72,8 +67,6 @@ in
     tree
     typst
     graphviz
-
-    zigpkgs.master
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

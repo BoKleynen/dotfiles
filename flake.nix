@@ -11,9 +11,6 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-
-    zig.url = "github:mitchellh/zig-overlay";
-    zig.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -26,8 +23,6 @@
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
-        overlays = import ./overlays { inherit inputs; };
-
         homeManagerModules = import ./modules/home-manager;
 
         # work machine
@@ -58,7 +53,6 @@
             ./home/programs/jujutsu.nix
             ./home/programs/k9s.nix
             ./home/programs/neovim.nix
-            ./home/programs/vscode.nix
             ./home/programs/zellij.nix
             ./home/programs/zsh.nix
           ];
@@ -68,9 +62,6 @@
       perSystem =
         { pkgs, self, ... }:
         {
-          # custom packages
-          packages = import ./pkgs { inherit pkgs; };
-
           # shell for working on the home-manager config.
           devShells.default = pkgs.mkShell {
             buildInputs = with pkgs; [
