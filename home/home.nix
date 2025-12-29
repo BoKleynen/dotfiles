@@ -40,6 +40,8 @@ in
   # environment.
   home.packages = with pkgs; [
     aapt
+    clickhouse
+    duckdb
     pinentry-tty
     postman
     gnupg
