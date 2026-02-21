@@ -9,6 +9,12 @@ return {
         nix = { "nixfmt" },
         python = { "ruff_format" },
         haskell = { "ormolu" },
+        javascript = { "oxfmt" },
+        javascriptreact = { "oxfmt" },
+        typescript = { "oxfmt" },
+        typescriptreact = { "oxfmt" },
+        json = { "oxfmt" },
+        vue = { "oxfmt" },
       },
       format_on_save = {
         -- These options will be passed to conform.format()

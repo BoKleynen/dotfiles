@@ -52,6 +52,7 @@ in
     jq
     just
     yq-go
+    kcl
     kind
     kubernetes-helm
     kubectl
@@ -151,6 +152,11 @@ in
 
       "Makefile" = {
         indent_style = "tab";
+      };
+
+      "Corefile" = {
+        indent_style = "space";
+        indent_size = 2;
       };
     };
   };
